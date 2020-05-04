@@ -4,11 +4,12 @@ const flatCache = require("flat-cache");
 const path = require("path");
 
 var cachePath = path.resolve(__dirname, "../cache");
-const cache = flatCache.load("itorrent", cachePath);
+
 const bot = new telebot(config.botToken);
 const parseMode = config.parseMode;
 
 const callbackhandler = async (msg) => {
+  let cache = flatCache.load("itorrent", cachePath);
   const split = msg.data.split(":");
   const queryKey = split[1];
   if (split[0] === "back") {
@@ -38,6 +39,7 @@ const callbackhandler = async (msg) => {
     );
   } else {
     const data = await cache.getKey(msg.data);
+
     const replyMarkup = bot.inlineKeyboard([
       [bot.inlineButton("Back ◀️", { callback: `back:${queryKey}` })],
     ]);
