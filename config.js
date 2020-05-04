@@ -1,5 +1,5 @@
 module.exports = {
-  botToken: "<Your Bot Token Here>",
+  botToken: "792635731:AAHBWr1pB_kbpp_reJphohCIPG31LY6iU4k",
   parseMode: "HTML",
   apiBaseUrl: "https://snowfl.com/OIcObqNfqpHTDvLKWQDNRlzQPbtqRcoKhtlled/",
 };
